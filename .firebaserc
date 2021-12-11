@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "nooexpress": {
+      "hosting": {
+        "NoosExpress": [
+          "nooexpress"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "nooexpress"
+  }
+}
