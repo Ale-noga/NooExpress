@@ -1,3 +1,12 @@
 .text-color{
   color: black;
 }
+
+a:hover{
+  transition: 0.5s;
+  text-decoration: underline;
+}
+
+.title:hover{
+  text-decoration: none;
+}
