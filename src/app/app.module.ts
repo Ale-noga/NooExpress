@@ -18,7 +18,6 @@ import { LandingpageComponent } from './pages/landingpage/landingpage.component'
 import { BudgetpageComponent } from './pages/budgetpage/budgetpage.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from './pages/footer/footer.component';
 import { StatusBudgetComponent } from './pages/status-budget/status-budget.component';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { StatusBudgetComponent } from './pages/status-budget/status-budget.compo
     LandingpageComponent,
     BudgetpageComponent,
     NavbarComponent,
-    FooterComponent,
     StatusBudgetComponent
   ],
   imports: [

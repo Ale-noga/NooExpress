@@ -20,7 +20,7 @@
       </div>
     </form>
     <form [formGroup]="form">
-        <div class="border-budgetSearch mt-4 mb-2" *ngIf="locateBud == true">
+        <div class="mt-4 mb-2" *ngIf="locateBud == true">
             <div class="row">
                 <div class="col-md-3">
                     <label for="statusBudget" class="form-label">Status da cotação:</label>
@@ -44,19 +44,16 @@
                 </div>
           </div>
           <div class="row mt-4">
-              <div class="col-md-3 d-flex justify-content-around">
-                <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#editBudget">Editar</button>
-                <button class="btn btn-danger" type="submit" (click)="deleteDialog()" data-bs-toggle="modal" data-bs-target="#deleteBudget">Deletar</button>
-              </div>
-              <div class="col-md-9 d-flex justify-content-end">
-                <button class="btn btn-info" type="submit" (click)="refresh()">Limpar</button>
+              <div class="col-md-12 d-flex justify-content-start">
+                <button class="btn btn-success card-btn" type="submit" data-bs-toggle="modal" data-bs-target="#editBudget">Editar</button>
+                <button class="btn btn-danger card-btn" type="submit" (click)="deleteDialog()" data-bs-toggle="modal" data-bs-target="#deleteBudget">Deletar</button>    
+                <button class="btn btn-info card-btn" type="submit" (click)="refresh()">Limpar</button>
               </div>
           </div>      
         </div>     
     </form>
   </div>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="editBudget" data-bs-backdrop="static" tabindex="-1" aria-labelledby="editBudget" aria-hidden="true">
