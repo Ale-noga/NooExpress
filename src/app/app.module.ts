@@ -17,6 +17,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { LandingpageComponent } from './pages/landingpage/landingpage.component';
 import { BudgetpageComponent } from './pages/budgetpage/budgetpage.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
