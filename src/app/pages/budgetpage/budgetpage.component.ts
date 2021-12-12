@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SelectItem } from '../shared/selectItem.model';
 import { StatesService } from '../shared/states';
+import { Budget } from './budget.model';
+import { BudgetService } from './budget.service';
 
 @Component({
   selector: 'app-budgetpage',
@@ -14,6 +16,7 @@ export class BudgetpageComponent implements OnInit {
   deadlineTax: number = 0
   distancePrice: number = 0
   finalPrice: number = 0
+  budget?: Budget
 
   optionsOrigin?: SelectItem[]
 
@@ -42,7 +45,8 @@ export class BudgetpageComponent implements OnInit {
   regiao?: number;
   optionsStates?: SelectItem[];
 
-  constructor(private fb: FormBuilder, private statesService: StatesService) { }
+  constructor(private fb: FormBuilder, private statesService: StatesService,
+    private budgetService: BudgetService) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -84,13 +88,8 @@ export class BudgetpageComponent implements OnInit {
 
   }
 
-  get(){
-    this.getFinalPrice();
-    console.log(this.form.getRawValue())
-    console.log(this.cubageTax)
-    console.log(this.deadlineTax)
-    console.log(this.distancePrice)
-    console.log(this.finalPrice)
+  sendBudget(){
+    this.budgetService.post(this.form.getRawValue());  
   }
 
   getCubage(){
