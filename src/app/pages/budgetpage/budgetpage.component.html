@@ -82,10 +82,28 @@
           <div class="row justify-content-end mt-3">
             <div class="col-md-12">
               <button type="submit" class="btn btn-success btn-lg" (click)="sendBudget()" 
-            [disabled]="!form?.valid">Enviar Cotação</button>
+            [disabled]="!form?.valid" data-bs-toggle="modal" data-bs-target="#dialogmodal">Enviar Cotação</button>
             </div>
           </div>
         </form>
     </div>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="dialogmodal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="dialogmodal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dialogmodal">{{dialogTitle}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="refresh()"></button>
+      </div>
+      <div class="modal-body">
+        {{dialogMessage}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="refresh()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -17,6 +17,8 @@ export class BudgetpageComponent implements OnInit {
   distancePrice: number = 0
   finalPrice: number = 0
   budget?: Budget
+  dialogMessage?: string;
+  dialogTitle?: string;
 
   optionsOrigin?: SelectItem[]
 
@@ -84,12 +86,19 @@ export class BudgetpageComponent implements OnInit {
       ])
     })
 
+    this.refresh();
     this.getStates();
 
   }
 
+  refresh(){
+    this.form.reset();
+  }
+
   sendBudget(){
-    this.budgetService.post(this.form.getRawValue());  
+    this.budgetService.post(this.form.getRawValue());
+    this.dialogMessage = "Sua cotação será respondida por e-mail em alguns minutos!"
+    this.dialogTitle = "Cotação Encaminhada"    
   }
 
   getCubage(){
