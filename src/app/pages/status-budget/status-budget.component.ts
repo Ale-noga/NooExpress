@@ -49,6 +49,7 @@ export class StatusBudgetComponent implements OnInit {
   regiao?: number;
   optionsStates?: SelectItem[];
   dialogDeleteMessage?: string;
+  locateBud?: boolean = false;
 
   constructor(private fb: FormBuilder, private statesService: StatesService,
     private budgetService: BudgetService) { }
@@ -103,6 +104,7 @@ export class StatusBudgetComponent implements OnInit {
   }
 
   refresh(){
+    this.locateBud = false;
     this.form2.reset();
     this.form.reset();
   }
@@ -110,6 +112,7 @@ export class StatusBudgetComponent implements OnInit {
   locateBudget(){
     this.budgetService.getBudget(this.form2.get("emailSearch")?.value).then(
       (resp: Budget) => {
+        this.locateBud = true
         this.budget = resp
         this.form.reset();
         if(this.budget != null){
