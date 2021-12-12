@@ -6,4 +6,9 @@ export class Budget{
     destiny?: string;
     deadline?: string;
     cubage?: number;
+    depth?: number;
+    height?: number;
+    id?: string;
+    statusBudget?: string;
+    width?: number;
 }

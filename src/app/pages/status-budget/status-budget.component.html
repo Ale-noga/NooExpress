@@ -1,0 +1,179 @@
+<div class="container-fluid mt-5 mb-5 d-flex justify-content-center">
+    <div class="border-budget">
+      <div class="row d-flex justify-content-center mb-2">
+        <div class="col-md-12">
+          <h3>
+            Verifique o status da sua cotação!
+          </h3>
+        </div>
+      </div>
+      <form [formGroup]="form2">
+      <div class="row mb-2 was-validated ">
+            <div class="col-md-12">
+                <label for="emailSearch" class="form-label">Por favor insira o E-mail de contato:</label>
+                <div class="input-group">
+                <input type="email" class="form-control is-valid" id="emailSearch"
+                placeholder="exemplo@exemplo.com" formControlName="emailSearch" aria-describedby="button-addon2" required> 
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="locateBudget()">Pesquisar</button>
+                </div>
+            </div>
+      </div>
+    </form>
+    <form [formGroup]="form">
+        <div class="border-budgetSearch mt-4 mb-2" *ngIf="budget != null">
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="statusBudget" class="form-label">Status da cotação:</label>
+                    <input type="text" class="form-control" id="statusBudget"
+                    formControlName="statusBudget" readonly>
+                </div>
+                <div class="col-md-3">
+                    <label for="origin" class="form-label">Origem:</label>
+                    <input type="text" class="form-control" id="origin"
+                    formControlName="origin" readonly>
+                </div>
+                <div class="col-md-3">
+                    <label for="destiny" class="form-label">Destino:</label>
+                    <input type="text" class="form-control" id="destiny"
+                    formControlName="destiny" readonly>
+                </div>
+                <div class="col-md-3">
+                    <label for="deadline" class="form-label">Prazo:</label>
+                    <input type="text" class="form-control" id="deadline"
+                    formControlName="deadline" readonly>
+                </div>
+          </div>
+          <div class="row mt-4">
+              <div class="col-md-3 d-flex justify-content-around">
+                <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#editBudget">Editar</button>
+                <button class="btn btn-danger" type="submit" (click)="deleteDialog()" data-bs-toggle="modal" data-bs-target="#deleteBudget">Deletar</button>
+              </div>
+          </div>      
+        </div>     
+    </form>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="editBudget" data-bs-backdrop="static" tabindex="-1" aria-labelledby="editBudget" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="editBudget">Deseja editar a cotação?</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="refresh()"></button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="form" class="was-validated">
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control is-valid" id="name"
+                placeholder="Nome Completo" formControlName="name" required>
+              </div>
+              <div class="col-md-6">
+                <label for="phoneNumber" class="form-label">Telefone de contato</label>
+                <input type="text" class="form-control is-valid" id="phoneNumber"
+                placeholder="11988888888" formControlName="phoneNumber" pattern="^[0-9]+$" required>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-1">
+              <div class="col-md-4">
+                <label for="origin" class="form-label">Origem</label>
+                <select class="form-select form-control is-valid" formControlName="origin" required>
+                  <option *ngFor='let origin of optionsOrigin' value="{{origin.value}}">{{origin.label}}</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="destiny" class="form-label">Destino</label>
+                <select class="form-select form-control is-valid" formControlName="destiny" required>
+                  <option *ngFor='let destiny of optionsDestiny' value="{{destiny.value}}">{{destiny.label}}</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="deadline" class="form-label">Prazo</label>
+                <select class="form-select form-control is-valid" formControlName="deadline" required>
+                  <option *ngFor='let deadline of optionsDeadline' value="{{deadline.value}}">{{deadline.label}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-1">
+              <div class="col-md-4">
+                <label for="height" class="form-label">Altura</label>
+                <input type="number" step=".01" class="form-control is-valid" id="height" 
+                placeholder="1" formControlName="height" min=0   aria-describedby="height" required>
+                <div id="height" class="form-text">
+                  Em metros</div>
+              </div>
+              <div class="col-md-4">
+                <label for="width" class="form-label">Largura</label>
+                <input type="number" step=".01" class="form-control is-valid" id="width" 
+                placeholder="1" formControlName="width" min=0  required>
+                <div id="width" class="form-text">
+                  Em metros</div>
+              </div>
+              <div class="col-md-4">
+                <label for="depth" class="form-label">Profundidade</label>
+                <input type="number" step=".01" class="form-control is-valid" id="depth" 
+                placeholder="1" formControlName="depth" min=0 required>
+                <div id="depth" class="form-text">
+                  Em metros</div>
+              </div>
+              
+            </div>
+            <div class="row mt-1">
+                  <div class="col-md-12">
+                    <div class="input-group">
+                        <button type="submit" id="calccubage" class="btn btn-outline-secondary" (click)="getCubage()">Calcular</button>
+                    <input type="number" step=".01" min=0  class="form-control" 
+                    id="cubage" formControlName="cubage" aria-describedby="calccubage" readonly>
+                    </div>
+                    <div id="cubage" class="form-text">
+                        KG (A x L x P x 300 = Peso Cubado)</div>
+                  </div>
+              </div>
+          </form>
+    </div>
+    <div class="modal-footer">
+    <button type="button" data-bs-dismiss="modal" class="btn btn-danger" (click)="refresh()" >Cancelar</button>
+      <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="sendBudget()" 
+      [disabled]="!form?.valid" data-bs-toggle="modal" data-bs-target="#dialogmodal">Salvar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="deleteBudget" data-bs-backdrop="static" tabindex="-1" aria-labelledby="deleteBudget" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteBudget">Deseja excluir a cotação?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="refresh()"></button>
+        </div>
+        <div class="modal-body">
+          {{dialogDeleteMessage}}
+        </div>
+        <div class="modal-footer">
+            <button type="button" data-bs-dismiss="modal" class="btn btn-danger" (click)="refresh()" >Cancelar</button>
+          <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="delete()" data-bs-toggle="modal" data-bs-target="#dialogmodal">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="dialogmodal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="dialogmodal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dialogmodal">{{dialogTitle}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="refresh()"></button>
+        </div>
+        <div class="modal-body">
+          {{dialogMessage}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="refresh()">Obrigado</button>
+        </div>
+      </div>
+    </div>
+  </div>

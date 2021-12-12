@@ -19,6 +19,7 @@ import { BudgetpageComponent } from './pages/budgetpage/budgetpage.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './pages/footer/footer.component';
+import { StatusBudgetComponent } from './pages/status-budget/status-budget.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './pages/footer/footer.component';
     LandingpageComponent,
     BudgetpageComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    StatusBudgetComponent
   ],
   imports: [
     BrowserModule,
