@@ -52,6 +52,7 @@ export class BudgetpageComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
+      id: new FormControl(""),
       name: new FormControl("",[
         Validators.required,
             ]),
@@ -96,7 +97,7 @@ export class BudgetpageComponent implements OnInit {
   }
 
   sendBudget(){
-    this.budgetService.post(this.form.getRawValue());
+    this.budgetService.post(this.form.get("email")?.value, this.form.getRawValue());
     this.dialogMessage = "Sua cotação será respondida por e-mail em alguns minutos!"
     this.dialogTitle = "Cotação Encaminhada"    
   }

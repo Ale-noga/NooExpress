@@ -13,7 +13,7 @@ export class BudgetService {
 
     }
 
-    async post(budget: Budget){
-        await setDoc(doc(this.fb, "budgets", "LA"), budget);
+    async post(guid:string, budget: Budget){
+        await setDoc(doc(this.fb, "budgets", guid), budget);
     }
 }
