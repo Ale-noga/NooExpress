@@ -140,7 +140,8 @@ export class StatusBudgetComponent implements OnInit {
     this.form.get("statusBudget")?.setValue("EM ANDAMENTO")
     this.budgetService.post(this.form.get("email")?.value, this.form.getRawValue());
     this.dialogMessage = "Não se preocupe, sua cotação será atualizada ;)"
-    this.dialogTitle = "Cotação Alterada"    
+    this.dialogTitle = "Cotação Alterada" 
+    this.refresh();   
   }
 
   deleteDialog(){
@@ -151,6 +152,7 @@ export class StatusBudgetComponent implements OnInit {
     this.budgetService.delete(this.form.get("email")?.value);
     this.dialogMessage = "Uma pena, mas estamos sempre dispostos a lhe atender! ;)";
     this.dialogTitle = "Até a próxima!";
+    this.refresh();
   }
 
   getCubage(){
