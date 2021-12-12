@@ -101,7 +101,7 @@ export class BudgetpageComponent implements OnInit {
     this.form.get("statusBudget")?.setValue("EM ANDAMENTO")
     this.budgetService.post(this.form.get("email")?.value, this.form.getRawValue());
     this.dialogMessage = "Sua cotação será respondida por e-mail em alguns minutos!"
-    this.dialogTitle = "Cotação Encaminhada"    
+    this.dialogTitle = "Cotação Encaminhada!"    
   }
 
   getCubage(){

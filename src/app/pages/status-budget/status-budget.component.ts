@@ -139,12 +139,12 @@ export class StatusBudgetComponent implements OnInit {
   sendBudget(){
     this.form.get("statusBudget")?.setValue("EM ANDAMENTO")
     this.budgetService.post(this.form.get("email")?.value, this.form.getRawValue());
-    this.dialogMessage = "Não se preocupe, sua cotação sera atualizada ;)"
+    this.dialogMessage = "Não se preocupe, sua cotação será atualizada ;)"
     this.dialogTitle = "Cotação Alterada"    
   }
 
   deleteDialog(){
-    this.dialogDeleteMessage = "Tem certeza que deseja exluir a cotação, " + this.budget?.name + "?";
+    this.dialogDeleteMessage = "Tem certeza que deseja excluir a cotação, " + this.budget?.name + "?";
   }
 
   delete(){
