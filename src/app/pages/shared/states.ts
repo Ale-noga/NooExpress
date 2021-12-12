@@ -73,19 +73,19 @@ export class StatesService{
                 },
                 {
                 label: "Paraná (PR)",
-                value: "72",
+                value: "PR",
                 },
                 {
                 label: "Pernambuco (PE)",
-                value: "RS",
+                value: "PE",
                 },
                 {
                 label: "Piauí (PI)",
-                value: "RS",
+                value: "PI",
                 },
                 {
                 label: "Rio de Janeiro (RJ)",
-                value: "RS",
+                value: "RJ",
                 },
                 {
                 label: "Rio Grande do Norte (RN)",
