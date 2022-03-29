@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5 mb-5 d-flex justify-content-center">
+<div class="container">
       <div class="border-budget">
         <div class="row d-flex justify-content-center mb-2">
           <div class="col-md-12">
@@ -67,14 +67,13 @@
               <div id="depth" class="form-text">
                 Em metros</div>
             </div>
-            <div class="col-md-2">
-              <label for="depth" class="form-label">x 300</label>
-              <button type="submit" class="btn btn-outline-secondary" (click)="getCubage()">Calcular</button>
-            </div>
-            <div class="col-md-4">
-              <label for="cubage" class="form-label">Peso Cubado</label>
-              <input type="number" step=".01" min=0  class="form-control" 
+            <div class="col-md-6">
+              <label for="depth" class="form-label">Peso Cubado</label>
+              <div class="input-group">
+                <button type="submit" class="btn btn-outline-secondary" (click)="getCubage()">Calcular</button>
+                <input type="number" step=".01" min=0  class="form-control" 
               id="cubage" formControlName="cubage" readonly >
+              </div>
               <div id="cubage" class="form-text">
                 KG (A x L x P x 300 = Peso Cubado)</div>
             </div>
