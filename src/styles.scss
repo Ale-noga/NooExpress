@@ -1,5 +1,48 @@
+@font-face {
+  font-family: misoBold ;
+  src: url(assets/fonts/miso-bold.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: misoLight ;
+  src: url(assets/fonts/miso-light.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: misoRegular ;
+  src: url(assets/fonts/miso-regular.ttf) format("opentype");
+}
+
+.mouseover{
+  cursor: pointer;
+}
+
+.fs-18{
+  font-size: 18px;
+}
+
+.fs-24{
+  font-size: 24px;
+}
+
+.misobold{
+  font-family: misoBold;
+}
+
+.misolight{
+  font-family: misoLight;
+}
+
+.misoregular{
+  font-family: misoRegular;
+}
+
+.texto-primary{
+  color: #f7a336 !important;
+}
+
 .background{
-  background-color: #fbaf4ccb;
+  background-color: #f8dab215;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -9,5 +52,80 @@
   border-radius: 15px;
   border: 1px solid #f7a3366c;
   padding: 20px;
-  background-color: #fbbf70;
+  background-color: transparent;
+}
+
+.btn-primary{
+  border-color: #fbaf4ccb !important;
+  font-family: misoLight;
+  background-color: #f7a336 !important;
+  font-size: 16px !important;
+  width: 180px !important;
+  height: 48px !important;
+}
+
+.btn-outline-secondary{
+  border-color: #f7a336  !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover{
+  border-color: #f7a336  !important;
+  background-color: #f7a336  !important;
+}
+
+.form-floating{
+  .form-control{
+    color: #f7a336 !important;
+    font-family: misoBold;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0%;
+    border-bottom: 1px solid #f7a336 !important;
+  }
+  .form-control:focus {
+    color: #f7a336 !important;
+    font-family: misoBold;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0%;
+    border-bottom: 1px solid #f7a336 !important;
+  }
+  .form-label{
+    color: #f7a336 !important;
+    font-family: misoLight !important;
+  }
+}
+
+input:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+select:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance:textfield;
+    }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .remove-576-767 {
+      display: none !important;
+  }
 }

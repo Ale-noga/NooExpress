@@ -1,12 +1,16 @@
-.text-color{
-  color: black;
-}
-
 a:hover{
   transition: 0.5s;
   text-decoration: underline;
 }
 
+.title{
+  font-size: 28px;
+}
+
 .title:hover{
   text-decoration: none;
+}
+
+.navbar-toggler-icon, .navbar-toggler{
+  color: #f7a336 !important;
 }

@@ -2,18 +2,18 @@
     <div class="border-budget">
       <div class="row mb-2">
         <div class="col-md-12 text-center">
-          <h3>
+          <h1 class="texto-primary misobold">
             Verifique o status da sua cotação!
-          </h3>
+          </h1>
         </div>
       </div>
       <form [formGroup]="form2">
-      <div class="row mb-2 was-validated ">
+      <div class="row mb-2">
             <div class="col-md-12">
-                <label for="emailSearch" class="form-label">Por favor insira o e-mail de contato:</label>
-                <div class="input-group">
-                <input type="email" class="form-control is-valid" id="emailSearch"
+                <div class="input-group form-floating">
+                <input type="email" class="form-control" id="emailSearch"
                 placeholder="exemplo@exemplo.com" formControlName="emailSearch" aria-describedby="button-addon2" required> 
+                <label for="emailSearch" class="form-label">Por favor insira o e-mail de contato:</label>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="locateBudget()">Pesquisar</button>
                 </div>
             </div>
@@ -23,31 +23,39 @@
         <div class="mt-4 mb-2" *ngIf="locateBud == true">
             <div class="row">
                 <div class="col-md-3">
-                    <label for="statusBudget" class="form-label">Status da cotação:</label>
+                    <div class="form-floating">
                     <input type="text" class="form-control" id="statusBudget"
                     formControlName="statusBudget" readonly>
+                    <label for="statusBudget" class="form-label">Status da cotação:</label>
+                    </div>
                 </div>
                 <div class="col-md-3">
-                    <label for="origin" class="form-label">Origem:</label>
+                    <div class="form-floating">
                     <input type="text" class="form-control" id="origin"
                     formControlName="origin" readonly>
+                    <label for="origin" class="form-label">Origem:</label>
+                    </div>
                 </div>
                 <div class="col-md-3">
-                    <label for="destiny" class="form-label">Destino:</label>
+                    <div class="form-floating">
                     <input type="text" class="form-control" id="destiny"
                     formControlName="destiny" readonly>
+                    <label for="destiny" class="form-label">Destino:</label>
+                    </div>
                 </div>
                 <div class="col-md-3">
-                    <label for="deadline" class="form-label">Prazo:</label>
+                    <div class="form-floating">
                     <input type="text" class="form-control" id="deadline"
                     formControlName="deadline" readonly>
+                    <label for="deadline" class="form-label">Prazo:</label>
+                    </div>
                 </div>
           </div>
           <div class="row mt-4">
               <div class="col-md-12 d-flex justify-content-start">
-                <button class="btn btn-success card-btn" type="submit" data-bs-toggle="modal" data-bs-target="#editBudget">Editar</button>
-                <button class="btn btn-danger card-btn" type="submit" (click)="deleteDialog()" data-bs-toggle="modal" data-bs-target="#deleteBudget">Deletar</button>    
-                <button class="btn btn-info card-btn" type="submit" (click)="refresh()">Limpar</button>
+                <i class="fa-solid fa-pen-to-square texto-primary fs-24 mouseover me-3" data-bs-toggle="modal" data-bs-target="#editBudget"></i>
+                <i class="fa-solid fa-trash-can texto-primary fs-24 mouseover me-3" (click)="deleteDialog()" data-bs-toggle="modal" data-bs-target="#deleteBudget"></i>
+                <i class="fa-solid fa-spray-can-sparkles texto-primary fs-24 mouseover" (click)="refresh()"></i>  
               </div>
           </div>      
         </div>     

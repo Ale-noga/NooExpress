@@ -19,6 +19,7 @@ import { BudgetpageComponent } from './pages/budgetpage/budgetpage.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StatusBudgetComponent } from './pages/status-budget/status-budget.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { StatusBudgetComponent } from './pages/status-budget/status-budget.compo
     LandingpageComponent,
     BudgetpageComponent,
     NavbarComponent,
-    StatusBudgetComponent
+    StatusBudgetComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
