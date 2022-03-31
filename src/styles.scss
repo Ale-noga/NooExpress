@@ -21,6 +21,10 @@
   font-size: 18px;
 }
 
+.fs-22{
+  font-size: 22px;
+}
+
 .fs-24{
   font-size: 24px;
 }
@@ -64,6 +68,23 @@
   height: 48px !important;
 }
 
+.btn-google{
+  border-color: #db4a39 !important;
+  background-color: #db4a39 !important;
+  color: white !important;
+  width: 50px !important;
+  height: 48px !important;
+}
+
+.btn-outline-primary{
+  border-color: #f7a336  !important;
+  color: #f7a336 !important;
+  font-family: misoLight;
+  font-size: 16px !important;
+  height: 48px !important;
+  background-color: transparent !important;
+}
+
 .btn-outline-secondary{
   border-color: #f7a336  !important;
   background-color: transparent !important;
@@ -98,6 +119,9 @@
     color: #f7a336 !important;
     font-family: misoLight !important;
   }
+  .form-control:read-only{
+    background-color: transparent !important;
+  }
 }
 
 input:focus {
@@ -124,6 +148,16 @@ input::-webkit-outer-spin-button,
     input[type=number] {
         -moz-appearance:textfield;
     }
+
+.modal{
+  .modal-content{
+    background-color: #fdf8f3 !important;
+    border: none !important;
+  }
+  .modal-header, .modal-footer{
+    border: none !important;
+  }
+}
 
 @media (min-width: 576px) and (max-width: 767px) {
   .remove-576-767 {

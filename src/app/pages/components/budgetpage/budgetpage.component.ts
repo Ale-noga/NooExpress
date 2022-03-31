@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { SelectItem } from '../shared/selectItem.model';
-import { StatesService } from '../shared/states';
+import { Router } from '@angular/router';
+import { SelectItem } from '../../shared/selectItem.model';
+import { StatesService } from '../../shared/states';
 import { Budget } from './budget.model';
 import { BudgetService } from './budget.service';
 
@@ -12,6 +13,7 @@ import { BudgetService } from './budget.service';
 })
 export class BudgetpageComponent implements OnInit {
 
+  _router:any;
   cubageTax: number = 0
   deadlineTax: number = 0
   distancePrice: number = 0
@@ -48,7 +50,9 @@ export class BudgetpageComponent implements OnInit {
   optionsStates?: SelectItem[];
 
   constructor(private fb: FormBuilder, private statesService: StatesService,
-    private budgetService: BudgetService) { }
+    private budgetService: BudgetService, private router: Router) { 
+      this._router = this.router
+    }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -100,7 +104,11 @@ export class BudgetpageComponent implements OnInit {
   sendBudget(){
     this.form.get("statusBudget")?.setValue("EM ANDAMENTO")
     this.budgetService.post(this.form.get("email")?.value, this.form.getRawValue());
-    this.dialogMessage = "Sua cotação será respondida por e-mail em alguns minutos!"
+    if(localStorage["user_uid"] != null){
+      this.dialogMessage = "Acompanhe o status da sua cotação em seu perfil!"
+    } else {
+      this.dialogMessage = "Sua cotação foi encaminhada! Faça login para acompanhar o status da cotação!"
+    }
     this.dialogTitle = "Cotação Encaminhada!"    
   }
 

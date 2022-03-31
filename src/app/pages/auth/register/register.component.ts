@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import Swal from 'sweetalert2';
 import { UserService } from './user.service';
 import { firebase_auth_errors } from 'src/environments/firebase.autherrors';
+import { AuthService } from '../../shared/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
   disabledBtn: any = false;
   form: FormGroup;
 
-  constructor(private userService: UserService, private router: Router, private fb: FormBuilder) {
+  constructor(private userService: UserService, 
+    private router: Router, private fb: FormBuilder, private authService: AuthService) {
     (window as any).scrollTo(0, 0)
     const rgxEmail: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     this.form = this.fb.group({
@@ -53,15 +55,7 @@ export class RegisterComponent implements OnInit {
         delete data?.passwordConfirm;
         data.uid = register?.user?.uid;
         this.userService.set_user(data)
-        /* this.router.navigate(['/perfil']) */
-        Swal.fire({
-          text: 'Conta criada com sucesso',
-          icon: 'success',
-          toast: true,
-          position: 'top-end',
-          timer: 7000,
-          timerProgressBar: true,
-      })
+        this.router.navigate(['/profile/person'])
     }
     }
   }

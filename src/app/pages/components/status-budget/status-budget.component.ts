@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Budget } from '../budgetpage/budget.model';
 import { BudgetService } from '../budgetpage/budget.service';
-import { SelectItem } from '../shared/selectItem.model';
-import { StatesService } from '../shared/states';
+import { SelectItem } from '../../shared/selectItem.model';
+import { StatesService } from '../../shared/states';
 
 @Component({
   selector: 'app-status-budget',

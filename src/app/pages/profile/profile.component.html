@@ -1,0 +1,24 @@
+<app-navbar-profile></app-navbar-profile>
+<div class="container">
+    <div class="row mt-5 pt-2">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+            <ul class="list-group d-none d-sm-block">
+                <li class="list-group-item texto-primary misobold fs-22">olá, {{user?.name}}</li>
+                <li class="list-group-item mouseover texto-primary misobold fs-22" (click)="_router.navigate(['/profile/person'])">dados pessoais</li>
+                <li class="list-group-item mouseover texto-primary misobold fs-22" (click)="_router.navigate(['/profile/profile-budgets'])">cotações</li>
+                <li class="list-group-item mouseover texto-primary misobold fs-22" (click)="_router.navigate(['/profile/pass-recovery'])">recuperar senha</li>
+                <li class="list-group-item mouseover texto-primary misobold fs-22" (click)="signOut()">sair</li>
+            </ul>
+            <ul class="list-group list-group-horizontal align-items-center justify-content-center d-md-none remove-576-767">
+                <li class="list-group-item texto-primary misobold fs-22">olá, {{user?.name}}</li>
+                <li class="list-group-item mouseover texto-primary misobold fs-22" (click)="_router.navigate(['/profile/person'])"><i class="fa-solid fa-user"></i></li>
+                <li class="list-group-item mouseover texto-primary misobold fs-22" (click)="_router.navigate(['/profile/profile-budgets'])"><i class="fa-solid fa-tag"></i></li>
+                <li class="list-group-item mouseover texto-primary misobold fs-22" (click)="_router.navigate(['/profile/pass-recovery'])"><i class="fa-solid fa-lock"></i></li>
+                <li class="list-group-item mouseover texto-primary misobold fs-22" (click)="signOut()"><i class="fa-solid fa-arrow-right-from-bracket"></i></li>
+            </ul>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

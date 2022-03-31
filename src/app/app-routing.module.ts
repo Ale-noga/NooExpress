@@ -1,19 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BudgetpageComponent } from './pages/budgetpage/budgetpage.component';
-import { LandingpageComponent } from './pages/landingpage/landingpage.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { StatusBudgetComponent } from './pages/status-budget/status-budget.component';
+import { AuthComponent } from './pages/auth/auth.component';
+import { ComponentsComponent } from './pages/components/components.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { LoginGuard } from './pages/shared/guard/login.guard';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component:LandingpageComponent},
-  {path: 'budget', component: BudgetpageComponent},
-  {path: 'statusBudget', component: StatusBudgetComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: '', redirectTo: 'principal/home', pathMatch: 'full'},
+  {path: 'principal', component:ComponentsComponent},
+  {path: 'authentication', component:AuthComponent},
+  {path: 'profile', component: ProfileComponent}
 
 ];
 

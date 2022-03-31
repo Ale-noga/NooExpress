@@ -14,29 +14,34 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { LandingpageComponent } from './pages/landingpage/landingpage.component';
-import { BudgetpageComponent } from './pages/budgetpage/budgetpage.component';
-import { NavbarComponent } from './pages/navbar/navbar.component';
+import { LandingpageComponent } from './pages/components/landingpage/landingpage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StatusBudgetComponent } from './pages/status-budget/status-budget.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileRoutingModule } from './pages/profile/profile-rounting.module';
+import { AuthComponent } from './pages/auth/auth.component';
+import { ComponentsComponent } from './pages/components/components.component';
+import { ComponentsRoutingModule } from './pages/components/components-rounting.module';
+import { NavbarComponent } from './pages/components/navbar/navbar.component';
+import { AuthRoutingModule } from './pages/auth/auth-rounting.module';
+import { NavbarProfileComponent } from './pages/profile/navbar-profile/navbar-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingpageComponent,
-    BudgetpageComponent,
+    ProfileComponent,
+    AuthComponent,
+    ComponentsComponent,
     NavbarComponent,
-    StatusBudgetComponent,
-    LoginComponent,
-    RegisterComponent
+    NavbarProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    ProfileRoutingModule,
+    ComponentsRoutingModule,
+    AuthRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),

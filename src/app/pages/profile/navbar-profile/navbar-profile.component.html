@@ -1,0 +1,18 @@
+<nav id="navbar" class="navbar sticky-top navbar-expand-lg bg-transparent mb-5" style="background-color: rgba(255, 255, 255, 0.623); border-radius: 0 0 10px 10px;">
+    <div class="container-fluid">
+      <a class="navbar-brand texto-primary title misobold" routerLink='/principal/home'> NOOS EXPRESS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars texto-primary mt-1"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">          
+          <li class="nav-item">
+            <a class="nav-link misolight texto-primary fs-18 mouseover" routerLink='/profile/person'>Olá, {{user.name}}</a>
+          </li>
+          <li class="nav-item active misolight mouseover">
+            <a class="nav-link texto-primary fs-18" (click)="signOut()">Sair</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

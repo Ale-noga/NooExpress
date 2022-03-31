@@ -31,7 +31,7 @@
               </div>
             </div>
           </div>
-          <div class="row d-flex justify-content-center mt-3">
+          <div class="row d-flex justify-content-center">
             <div class="col-md-4">
               <div class="form-floating">
                 <select class="form-select form-control" formControlName="origin" required>
@@ -57,7 +57,7 @@
               </div>
             </div>
           </div>
-          <div class="row d-flex justify-content-center mt-3">
+          <div class="row d-flex justify-content-center">
             <div class="col-md-2">
               <div class="form-floating">
               <input type="number" step=".01" class="form-control" id="height" 
@@ -118,7 +118,8 @@
         {{dialogMessage}}
       </div>
       <div class="modal-footer">
-        <button type="button" data-bs-dismiss="modal" class="btn btn-success" (click)="refresh()">Obrigado</button>
+        <button type="button" data-bs-dismiss="modal" class="btn btn-outline-primary" (click)="refresh()">Obrigado</button>
+        <button type="button" data-bs-dismiss="modal" class="btn btn-primary " (click)="_router.navigate(['/profile/profile-budgets'])">Acompanhe a cotação</button>
       </div>
     </div>
   </div>

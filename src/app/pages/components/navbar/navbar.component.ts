@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { getAuth } from 'firebase/auth';
+import { UserService } from '../../auth/register/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +8,18 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  logged: any;
+  user: any;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    /* if(localStorage["user_uid"] != null){
+      this.logged = true;
+      this.user = this.userService.get_user_by_id(localStorage["user_uid"])
+    } else {
+      this.logged = false;
+    } */
   }
 
   @HostListener('window:scroll', ['$event'])
