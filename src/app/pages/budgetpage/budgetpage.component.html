@@ -62,22 +62,28 @@
               <div class="form-floating">
               <input type="number" step=".01" class="form-control" id="height" 
               placeholder="1" formControlName="height" min=0   aria-describedby="height" required>
-              <label for="height" class="form-label">Altura (em metros)</label>
+              <label for="height" class="form-label">Altura</label>
+              <div id="height" class="form-text texto-primary misolight">
+                Em metros</div>
               </div>
             </div>
             <div class="col-md-2">
               <div class="form-floating">
                 <input type="number" step=".01" class="form-control" id="width" 
                 placeholder="1" formControlName="width" min=0  required>
-              <label for="width" class="form-label">Largura (em metros)</label>
+              <label for="width" class="form-label">Largura</label>
               </div>
+              <div id="width" class="form-text texto-primary misolight">
+                Em metros</div>
             </div>
             <div class="col-md-2">
               <div class="form-floating">
               <input type="number" step=".01" class="form-control" id="depth" 
               placeholder="1" formControlName="depth" min=0 required>
-              <label for="depth" class="form-label">Profundidade (em metros)</label>
+              <label for="depth" class="form-label">Profundidade</label>
               </div>
+              <div id="depth" class="form-text texto-primary misolight">
+                Em metros</div>
             </div>
             <div class="col-md-6">
               <div class="input-group form-floating">
@@ -86,7 +92,7 @@
                 <label for="depth" class="form-label">Peso Cubado</label>
                 <button type="submit" class="btn btn-outline-secondary" (click)="getCubage()">Calcular</button>
               </div>
-              <div id="cubage" class="form-text texto-primary">
+              <div id="cubage" class="form-text texto-primary misolight">
                 KG (A x L x P x 300 = Peso Cubado)</div>
             </div>
           </div>
