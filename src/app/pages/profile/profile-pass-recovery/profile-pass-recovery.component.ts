@@ -12,7 +12,7 @@ export class ProfilePassRecoveryComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   async ngOnInit(): Promise<void> {
-    this.user = this.userService.get_user_by_id(localStorage["user_uid"]);
+    this.user = await this.userService.get_user_by_id(localStorage["user_uid"]);
   }
 
 }
