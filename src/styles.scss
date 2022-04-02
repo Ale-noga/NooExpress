@@ -68,6 +68,11 @@
   height: 48px !important;
 }
 
+.btn-primary:disabled{
+  background-color: #36322bcb !important;
+  border-color: #36322bcb !important;
+}
+
 .btn-google{
   border-color: #db4a39 !important;
   background-color: #db4a39 !important;

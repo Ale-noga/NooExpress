@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../auth/register/user.service';
 
 @Component({
   selector: 'app-profile-pass-recovery',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-pass-recovery.component.scss']
 })
 export class ProfilePassRecoveryComponent implements OnInit {
+  user: any;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.user = this.userService.get_user_by_id(localStorage["user_uid"]);
   }
 
 }

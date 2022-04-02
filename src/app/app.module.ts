@@ -24,6 +24,7 @@ import { ComponentsRoutingModule } from './pages/components/components-rounting.
 import { NavbarComponent } from './pages/components/navbar/navbar.component';
 import { AuthRoutingModule } from './pages/auth/auth-rounting.module';
 import { NavbarProfileComponent } from './pages/profile/navbar-profile/navbar-profile.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { NavbarProfileComponent } from './pages/profile/navbar-profile/navbar-pr
     ProfileRoutingModule,
     ComponentsRoutingModule,
     AuthRoutingModule,
+    IvyCarouselModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),

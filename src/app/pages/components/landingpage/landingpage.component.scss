@@ -7,3 +7,13 @@ a:hover{
   transition: 0.5s;
   text-decoration: underline;
 }
+
+
+.card-body{
+  background-color: #FEFBF8 !important;
+  border: none !important;
+}
+
+:host ::ng-deep .carousel-arrow{
+  background-color: #F7A336 !important;
+} 

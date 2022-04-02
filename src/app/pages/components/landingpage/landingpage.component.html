@@ -1,25 +1,25 @@
-  <section class="main">
+  <section class="main h-100">
     <div class="container-fluid">
-      <div class="row pt-5 d-flex align-items-center mb-5">
+      <div class="row pt-3 d-flex align-items-center">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 text-center">
           <h1 class="misolight texto-primary">
-            Leve o que for necessário para <br><strong>qualquer lugar</strong> do país
+            Leve o que for necessário para <br><strong class="misobold text-black text-decoration-underline">qualquer lugar</strong> do país
           </h1>
-          <img src="../../../assets/images/section1mob.png" class="img-fluid text-center d-md-none" alt="" style="width: 100%;">
+          <img src="../../../../assets/images/section1mob.png" class="img-fluid text-center d-md-none" alt="" style="width: 100%;">
           <h2 class="mt-3 misolight texto-primary">
-            Faça sua <span  style="text-decoration: underline;"><a routerLink='/budget' class="misobold texto-primary">cotação</a></span> agora!
+            Faça sua <span  style="text-decoration: underline;"><a routerLink='/principal/budget' class="misobold">cotação</a></span> agora!
           </h2>
           <h2 class="mt-3 misolight texto-primary">
-            Em prazos de 48, 24 e 12 horas <br>seu material estará <span class="misobold text-decoration-underline">entregue!</span>
+            Em prazos de 48, 24 e 12 horas <br>seu material estará <span class="misobold text-decoration-underline text-black">entregue!</span>
           </h2>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-none d-sm-block remove-576-767">
-            <img src="../../../assets/images/section1.png" class="img-fluid" alt="" style="width: 100%;">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 d-none d-sm-block">
+            <img src="../../../../assets/images/section1.png" class="img-fluid remove-576-767" alt="" style="width: 100%;">
         </div>
       </div>
     </div>
   </section>
-  <section>
+  <section class="h-100">
     <div class="container-fluid">
       <div class="row pt-5 mt-3">
         <div class="col-md-12 d-flex justify-content-center">
@@ -27,31 +27,70 @@
             Entenda como é realizado nosso transporte:
           </h1>
         </div>
+        <div class="col-md-12 d-flex justify-content-center">
+          <img src="../../../../assets/images/seta.png" class="img-fluid" alt="" style="width: 75px; height: 75px;">
+        </div>
       </div>
       <div class="row pt-5 mt-5 d-flex justify-content-center">
-          <div class="col-md-4 mt-3">
+          <div class="col-md-4 mt-3 d-none d-sm-block">
             <p class="text-center misobold texto-primary fs-24">
               1º Serialização
             </p>
-            <img src="../../../assets/images/serializacao.png" class="img-fluid" alt="" style="width: 100%;">
+            <img src="../../../../assets/images/serializacao.png" class="img-fluid" alt="" style="width: 100%;">
         </div>
-        <div class="col-md-4 mt-3">
+        <div class="col-md-4 mt-3 d-none d-sm-block">
           <p class="text-center misobold texto-primary fs-24">
             2º Embarque
           </p>
-          <img src="../../../assets/images/embarque.png" class="img-fluid" alt="" style="width: 100%;">
+          <img src="../../../../assets/images/embarque.png" class="img-fluid" alt="" style="width: 100%;">
         </div>
-        <div class="col-md-4 mt-3">
+        <div class="col-md-4 mt-3 d-none d-sm-block">
           <p class="text-center misobold texto-primary fs-24">
             3º Despacho
           </p>
-        <img src="../../../assets/images/despacho.png" class="img-fluid" alt="" style="width: 100%;">
+        <img src="../../../../assets/images/despacho.png" class="img-fluid" alt="" style="width: 100%;">
+        </div>
+      </div>
+      <div class="row justify-content-center d-md-none remove-576-767">
+        <div class="col-md-12 col-sm-12">
+          <carousel [cellsToShow]=1 [height]=350>
+            <div class="carousel-cell">
+              <div class="card">
+                <div class="card-body">
+                  <img src="../../../../assets/images/serializacao.png" class="img-fluid" alt="" style="width: 100%;">
+                  <p class="text-center misobold texto-primary fs-24">
+                  1º Serialização
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-cell">
+              <div class="card">
+                <div class="card-body">
+                  <img src="../../../../assets/images/embarque.png" class="img-fluid" alt="" style="width: 100%;">
+                  <p class="text-center misobold texto-primary fs-24">
+                  2º Embarque
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-cell">
+              <div class="card">
+                <div class="card-body">
+                  <img src="../../../../assets/images/despacho.png" class="img-fluid" alt="" style="width: 100%;">
+                  <p class="text-center misobold texto-primary fs-24">
+                    3º Despacho
+                  </p>
+                </div>
+              </div>
+            </div>
+          </carousel>
         </div>
       </div>
     </div>
   </section>
 <footer class="page-footer mt-4" style="background-color: #fa9f29;" >
-    <div class="container text-white misolight fs-18">
+    <div class="container misolight fs-18">
         <div class="row text-center">
             <div class="col-md-12 d-flex justify-content-center mt-3">
                 <p>Entre em contato conosco:</p>
