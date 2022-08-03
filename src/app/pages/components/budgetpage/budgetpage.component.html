@@ -34,7 +34,7 @@
           <div class="row d-flex justify-content-center">
             <div class="col-md-4">
               <div class="form-floating">
-                <select class="form-select form-control" formControlName="origin" required>
+                <select class="form-select form-control" formControlName="origin" required id="origin">
                   <option *ngFor='let origin of optionsOrigin' value="{{origin.value}}">{{origin.label}}</option>
                 </select>
                 <label for="origin" class="form-label">Origem*</label>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-4">
               <div class="form-floating">
-                <select class="form-select form-control" formControlName="destiny" required>
+                <select class="form-select form-control" formControlName="destiny" required id="destiny">
                   <option *ngFor='let destiny of optionsDestiny' value="{{destiny.value}}">{{destiny.label}}</option>
                 </select>
                 <label for="destiny" class="form-label">Destino*</label>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-md-4">
               <div class="form-floating">
-                <select class="form-select form-control" formControlName="deadline" required>
+                <select class="form-select form-control" formControlName="deadline" required id="deadline">
                   <option *ngFor='let deadline of optionsDeadline' value="{{deadline.value}}">{{deadline.label}}</option>
                 </select>
                 <label for="deadline" class="form-label">Prazo*</label>
@@ -90,7 +90,7 @@
                 <input type="number" step=".01" min=0  class="form-control" 
                 id="cubage" formControlName="cubage" readonly>
                 <label for="depth" class="form-label">Peso Cubado*</label>
-                <button type="submit" class="btn btn-outline-secondary" (click)="getCubage()">Calcular</button>
+                <button type="submit" id="getCubage" class="btn btn-outline-secondary" (click)="getCubage()">Calcular</button>
               </div>
               <div id="cubage" class="form-text texto-primary misolight">
                 KG (A x L x P x 300 = Peso Cubado)</div>
@@ -98,7 +98,7 @@
           </div>
           <div class="row justify-content-end mt-5">
             <div class="col-md-12">
-              <button type="submit" class="btn btn-primary btn-lg" (click)="sendBudget()" 
+              <button type="submit" class="btn btn-primary btn-lg" id="sendBudget" (click)="sendBudget()" 
             [disabled]="!form?.valid" data-bs-toggle="modal" data-bs-target="#dialogmodal">Enviar Cotação</button>
             </div>
           </div>
